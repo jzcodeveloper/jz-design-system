@@ -1,6 +1,6 @@
 {
   "name": "jz-ui-base",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "files": [
     "build"
@@ -47,5 +47,5 @@
   "publishConfig": {
     "registry": "https://npmjs.com/settings/javier.zabala"
   },
-  "gitHead": "8c9689d8a9a2def5d0ab67ad15077941a39a4f6d"
+  "gitHead": "eb104584054a1b4353aab2e272d34ea8d25aa045"
 }
