@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es5",
+    "lib": ["es2020", "dom"],
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "allowSyntheticDefaultImports": true,
+    "noErrorTruncation": false,
+    "allowJs": true,
+    "paths": {
+      "taxfix-demo": ["./packages/taxfix-demo/src"],
+      "taxfix-demo/*": ["./packages/taxfix-demo/src/*"],
+      "taxfix-ds": ["./packages/taxfix-ds/src"],
+      "taxfix-ds/*": ["./packages/taxfix-ds/src/*"]
+    },
+    // Otherwise we get react-native typings which conflict with dom.lib.
+    "types": ["node", "react"]
+  },
+  "exclude": ["**/.*/", "**/build", "**/node_modules"]
+}
