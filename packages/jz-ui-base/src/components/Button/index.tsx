@@ -1,8 +1,9 @@
 import React from "react";
-import { Button, ButtonProps } from "@mui/material";
+import { ButtonProps } from "@mui/material";
+import { StyledCustomButton } from "./styles";
 
 export const CustomButton: React.FC<ButtonProps> = (props: ButtonProps) => {
-  return <Button {...props}>{props.children}</Button>;
+  return <StyledCustomButton {...props}>{props.children}</StyledCustomButton>;
 };
 
 export default CustomButton;

@@ -1,7 +1,7 @@
-import { alpha, Theme } from "@mui/material";
+import { Theme } from "@mui/material";
 import { Components } from "@mui/material";
 import { baseOverrides } from "../overrides";
-import { pxToRem, markCssImportant } from "../utils";
+import { pxToRem } from "../utils";
 
 export const overrides: (theme: Theme) => Components = (theme: Theme) => ({
   ...baseOverrides(theme),
@@ -23,113 +23,6 @@ export const overrides: (theme: Theme) => Components = (theme: Theme) => ({
         fontSize: pxToRem(13),
       },
     },
-    variants: [
-      {
-        props: { variant: "contained", color: "primary" },
-        style: {
-          "&:hover": {
-            backgroundColor: theme.palette.primary.main,
-          },
-        },
-      },
-      {
-        props: { variant: "contained", color: "error" },
-        style: {
-          "&:hover": {
-            backgroundColor: theme.palette.error.main,
-          },
-        },
-      },
-      {
-        props: { variant: "contained", disabled: true },
-        style: {
-          backgroundColor: markCssImportant(
-            theme.palette.extraColors?.grey["A100"]
-          ),
-          color: markCssImportant(theme.palette.extraColors?.grey["500"]),
-        },
-      },
-      {
-        props: { variant: "light", color: "primary" },
-        style: {
-          backgroundColor:
-            theme.palette.mode === "light"
-              ? theme.palette.primary.light
-              : theme.palette.primary.dark,
-          color: theme.palette.primary.main,
-          "&:hover": {
-            backgroundColor:
-              theme.palette.mode === "light"
-                ? theme.palette.primary.light
-                : theme.palette.primary.dark,
-          },
-        },
-      },
-      {
-        props: { variant: "light", color: "error" },
-        style: {
-          backgroundColor:
-            theme.palette.mode === "light"
-              ? theme.palette.error.light
-              : theme.palette.error.dark,
-          color: theme.palette.error.main,
-          "&:hover": {
-            backgroundColor:
-              theme.palette.mode === "light"
-                ? theme.palette.error.light
-                : theme.palette.error.dark,
-          },
-        },
-      },
-      {
-        props: { variant: "light", disabled: true },
-        style: {
-          backgroundColor:
-            theme.palette.mode === "light"
-              ? markCssImportant(
-                  alpha(theme.palette.extraColors?.grey["900"] as string, 0.05)
-                )
-              : markCssImportant(
-                  alpha(theme.palette.extraColors?.white[500] as string, 0.05)
-                ),
-          color:
-            theme.palette.mode === "light"
-              ? markCssImportant(theme.palette.extraColors?.grey["300"])
-              : markCssImportant(theme.palette.extraColors?.grey["500"]),
-        },
-      },
-      {
-        props: { variant: "text", color: "primary" },
-        style: {
-          "&:hover": {
-            backgroundColor:
-              theme.palette.mode === "light"
-                ? theme.palette.primary.light
-                : theme.palette.primary.dark,
-          },
-        },
-      },
-      {
-        props: { variant: "text", color: "error" },
-        style: {
-          "&:hover": {
-            backgroundColor:
-              theme.palette.mode === "light"
-                ? theme.palette.error.light
-                : theme.palette.error.dark,
-          },
-        },
-      },
-      {
-        props: { variant: "text", disabled: true },
-        style: {
-          color:
-            theme.palette.mode === "light"
-              ? markCssImportant(theme.palette.extraColors?.grey["300"])
-              : markCssImportant(theme.palette.extraColors?.grey["500"]),
-        },
-      },
-    ],
   },
   MuiIconButton: {
     styleOverrides: {
