@@ -12,4 +12,10 @@ export const CustomButtonGroup: React.FC<ButtonGroupProps> = React.forwardRef(
   }
 );
 
+CustomButtonGroup.defaultProps = {
+  variant: "contained",
+  color: "primary",
+  orientation: "horizontal",
+};
+
 export default CustomButtonGroup;

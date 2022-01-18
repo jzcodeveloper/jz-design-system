@@ -38,6 +38,12 @@ declare module "@mui/material/Button" {
   }
 }
 
+declare module "@mui/material/ButtonGroup" {
+  interface ButtonGroupPropsVariantOverrides {
+    light: true;
+  }
+}
+
 declare module "@mui/material/IconButton" {
   interface IconButtonPropsColorOverrides {
     disabled: true;

@@ -8,6 +8,7 @@ import { KeyboardArrowDown } from "@mui/icons-material";
 export interface SplitButtonProps {
   value: string;
   variant?: "contained" | "light";
+  color?: "primary" | "error";
   onChange: (value: any) => void;
 }
 
@@ -16,6 +17,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
   children,
   variant,
   value,
+  color,
 }) => {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLDivElement>(null);
@@ -43,9 +45,10 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
   return (
     <>
       <ButtonGroup
-        variant="contained"
+        variant={variant}
         ref={anchorRef}
         aria-label="split button"
+        color={color}
       >
         {React.Children.toArray(children)
           .filter((c: any) => c.props.value === value)
@@ -54,6 +57,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
               key={c.props.value}
               onClick={c.props.onClick}
               variant={variant}
+              color={color}
             >
               {c.props.children}
             </Button>
@@ -66,6 +70,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
           aria-haspopup="menu"
           onClick={handleToggle}
           variant={variant}
+          color={color}
         >
           <KeyboardArrowDown />
         </Button>
@@ -107,6 +112,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
 SplitButton.defaultProps = {
   variant: "contained",
   value: "",
+  color: "primary",
 };
 
 export default SplitButton;

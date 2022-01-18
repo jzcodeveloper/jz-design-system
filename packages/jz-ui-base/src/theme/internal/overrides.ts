@@ -20,6 +20,7 @@ export const overrides: (theme: Theme) => Components = (theme: Theme) => ({
         },
       },
       sizeSmall: {
+        padding: "4px 10px",
         fontSize: pxToRem(13),
       },
     },
@@ -28,6 +29,13 @@ export const overrides: (theme: Theme) => Components = (theme: Theme) => ({
     styleOverrides: {
       root: {
         borderRadius: "40%",
+      },
+    },
+  },
+  MuiButtonGroup: {
+    styleOverrides: {
+      root: {
+        boxShadow: "none",
       },
     },
   },
